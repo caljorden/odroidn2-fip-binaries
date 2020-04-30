@@ -1,7 +1,10 @@
-# Instructions for building the fip files for mainline u-boot for the Hardkernel ODroid N2 board
+# Instructions for building the fip files for mainline u-boot for the Hardkernel ODROID N2 board
 
-Note: This build was done on Ubuntu 18.04.4 LTS
-First, login as a normal user (this assumes a clean install of Ubuntu 18.04.4 LTS)
+Credits: You can find most of these details in the file `board/amlogic/w400/README.odroid-n2` in the U-Boot source tree.  Neil Armstrong wrote these as he added support for the ODROID N2 to mainline u-boot.  I created this repository to simplfy the process of building the mainline u-boot for the ODROID N2 (as building these require an i386 multilib environment and specific compiler versions).
+
+These files were created by following these steps (this assumes a clean install of Ubuntu 18.04.4 LTS)
+
+Log in as a user, and run the following commands
 ~~~~~
 sudo apt install git libc6-i386
 sudo apt install libstdc++6:i386 zlib1g:i386
@@ -24,4 +27,4 @@ cp fip/g12b/{bl2.bin,bl30.bin,bl31.img,ddr3_1d.fw,ddr4_1d.fw,ddr4_2d.fw} fip-bin
 cp fip/g12b/{diag_lpddr4.fw,lpddr4_1d.fw,lpddr4_2d.fw,piei.fw,aml_ddr.fw} fip-bin/
 cp fip/g12b/aml_encrypt_g12b fip-bin
 ~~~~~
-The contents of fip-bin are what are commited to this repository.
+The contents of `fip-bin` are what are commited to this repository.
